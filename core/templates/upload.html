@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CyberDeck | File Scanner</title>
+    <style>
+        body
+        {
+            font-family: sans-serif;
+            background: #121212;
+            color: #0f0;
+            text-align: center;
+            padding : 0;
+            margin : 0;
+        }
+
+         .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #020202;
+            padding: 10px 30px;
+            border-bottom: 2px solid #0f0;
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+            color: #0f0;
+        }
+
+        .navbar a {
+            color: #0f0;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #00ff99;
+        }
+
+         input[type="file" i] {
+            background-color: transparent;
+            border: 1px solid #0f0;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        button {
+            border-radius: 20px;
+            background-color: #0f0;
+        }
+
+        .scan
+        {
+            width : 25%;
+            margin : auto;
+            margin-top : 90px;
+            border : 5px solid #0f0;
+            border-radius : 20px;
+            padding : 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <h1>CyberDeck</h1>
+    <div>
+        <a href="/">Home</a>
+        <a href="/upload">Scanner</a>
+        <a href="/awareness">Awareness</a>
+        <a href="/login">Login</a>
+    </div>
+</div>
+
+<h1>Scan Your Files Here.</h1>
+
+<div class="scan">
+    <h1>Upload a File to Scan</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file" required style="margin: 20px;">
+        <br>
+        <button type="submit" style="padding: 10px 20px;">Scan</button>
+    </form>
+</div>
+</body>
+</html>
